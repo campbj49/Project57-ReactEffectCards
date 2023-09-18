@@ -28,15 +28,15 @@ function Deck(props) {
   },[]);
   //When the "draw a card" is pressed get the next card and add it to the card array?
   function draw(){
-    setStack(...stack, (<Card deckID = {deck}/>))
+    setStack([...stack, (<Card deckID = {deck} key = {stack.length}/>)]);
   }
   //Render stack
 
   return (
-    <div className="Deck">
-    <button onclick={draw}>Draw a card</button>
+    <div className="Deck">{console.log("nani")}
+    <button onClick={draw}>Draw a card</button>
       <div className="stack">
-        {stack}
+        {[...stack]} 
       </div>
     </div>
   );

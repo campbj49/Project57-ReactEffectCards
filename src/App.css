@@ -40,3 +40,11 @@
 .bi{
   background-color: black;
 }
+
+body{
+  background-color: rgb(102, 180, 102);
+}
+img{
+  position: absolute;
+  right: 50%;
+}
