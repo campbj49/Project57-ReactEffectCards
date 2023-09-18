@@ -17,6 +17,7 @@ import Card from "./Card";
 function Deck(props) {
   const [deck, setDeck] = useState(null);
   const [stack, setStack] = useState([]);
+  const [shuffled, setShuffled] = useState(true);
   //when the element loads create a deck and save the ID in a state
   useEffect(function fetchDeckWhenMounted() {
     async function fetchDeck() {
@@ -30,14 +31,20 @@ function Deck(props) {
   function draw(){
     setStack([...stack, (<Card deckID = {deck} key = {stack.length}/>)]);
   }
-  //Render stack
+
+  //shuffles the deck when the button is pushed
+  async function shuffle(){
+    setStack([])
+    await axios.get(`https://deckofcardsapi.com/api/deck/${deck}/shuffle/`)
+  }
 
   return (
     <div className="Deck">{console.log("nani")}
     <button onClick={draw}>Draw a card</button>
       <div className="stack">
-        {[...stack]} 
+        {stack} 
       </div>
+    <button onClick={shuffle}>Shuffle</button>
     </div>
   );
 }

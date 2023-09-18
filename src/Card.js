@@ -19,6 +19,7 @@ function Card({deckID}) {
     async function fetchCard() {
       const deckResult = await axios.get(
         `https://deckofcardsapi.com/api/deck/${deckID}/draw/`);
+        console.log(deckResult.data.remaining);
         if(deckResult.data.remaining >0)
             setCard(deckResult.data.cards[0].image);
         else setCard("https://static.vecteezy.com/system/resources/thumbnails/017/178/563/small/cross-check-icon-symbol-on-transparent-background-free-png.png")
