@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "*",
     "@testing-library/react": "*",
     "@testing-library/user-event": "*",
+    "axios": "^1.5.0",
     "bootstrap-icons": "^1.11.0",
     "react": "*",
     "react-dom": "*",

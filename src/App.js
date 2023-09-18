@@ -1,21 +1,19 @@
 import "./App.css";
-import BoxList from "./BoxList";
-import ToDoList from "./ToDoList";
+import Deck from "./Deck"
 
 /** App component, renders BoxList
  * 
  * Props: none
  * State: none
  * 
- * App --> BoxList
+ * App --> Deck
  */
 
 function App() {
 
   return (
     <div className="App">
-      {/* <BoxList/> */}
-      <ToDoList/>
+      <Deck/>
     </div>
   );
 }
